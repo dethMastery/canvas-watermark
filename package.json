@@ -1,6 +1,6 @@
 {
   "name": "cam-mark",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "watermark :x",
   "main": "./bin/index.js",
   "keywords": [
