@@ -17,15 +17,7 @@ async function canvasFooter(path, reso, model) {
   img.src = `data:image/jpeg;base64,${fs.readFileSync(path).toString('base64')}`
 
   if (canvas.width < canvas.height) {
-    var scale = canvas.width / img.height
-    var angle = Math.PI / 2
-    ctx.save()
-    ctx.rotate(angle)
-    ctx.rotate(angle)
-    ctx.rotate(angle)
-    ctx.scale(scale, scale)
-    ctx.drawImage(img, -reso[1], 0)
-    ctx.restore()
+    ctx.drawImage(img, 0, 0)
   } else {
     // Draw the image at the desired position
     ctx.drawImage(img, 0, 0)
