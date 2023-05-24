@@ -13,6 +13,7 @@
     "url": "https://github.com/dethMastery/canvas-watermark"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
     "yargs": "^17.2.1"
   },
   "scripts": {
