@@ -1,5 +1,4 @@
 const fs = require('fs')
-const sharp = require('sharp')
 const ExifParser = require('exif-parser')
 
 const lists = require('./ignored.json').ignored
@@ -23,9 +22,15 @@ function mark(folderPath, title) {
           let imgResolution
 
           if (result.tags.Orientation == 8) {
-            imgResolution = [result.tags.ExifImageHeight, result.tags.ExifImageWidth]
+            imgResolution = [
+              result.imageSize.height,
+              result.imageSize.width,
+            ]
           } else {
-            imgResolution = [result.tags.ExifImageWidth, result.tags.ExifImageHeight]
+            imgResolution = [
+              result.imageSize.width,
+              result.imageSize.height,
+            ]
           }
 
           const imageLog = `ISO: ${result.tags.ISO} | F: ${result.tags.FocalLength}`

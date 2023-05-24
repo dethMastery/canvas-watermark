@@ -7,14 +7,14 @@ async function canvasFooter(path, reso, model) {
   const outPath = `${dirPath}/marked`
   const fileName = `${path.split('/').pop().split('.')[0]}_marked.jpeg`
 
-  const canvas = createCanvas(reso[0], parseInt(reso[1]) + 450)
+  const canvas = createCanvas(parseInt(reso[0]), parseInt(reso[1]) + 450)
   const ctx = canvas.getContext('2d')
 
   ctx.fillStyle = '#2e2f2f'
   ctx.fillRect(0, 0, reso[0], reso[1] + 450)
 
   var img = new Image()
-  img.src = path
+  img.src = `data:image/jpeg;base64,${fs.readFileSync(path).toString('base64')}`
 
   if (canvas.width < canvas.height) {
     var scale = canvas.width / img.height
