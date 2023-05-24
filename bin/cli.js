@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 const yargs = require('yargs');
-// let ty = require('./index')
+let cMark = require('./index')
 
 const opt = yargs
     .usage(
@@ -15,10 +15,11 @@ const opt = yargs
     })
     .argv;
 
-const a = opt._[0];
+const path = opt._[0];
+const config = opt.c
 
-if (a != undefined) {
-  
+if (path != undefined) {
+  cMark(path, config)
 } else {
-  console.log('\x1b[31m', 'System Error: invalid folder path');
+  console.log('\x1b[31m%s\x1b[0m', 'System Error: invalid folder path');
 }
