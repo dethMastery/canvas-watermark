@@ -4,7 +4,6 @@ const ExifParser = require('exif-parser')
 
 const lists = require('./ignored.json').ignored
 const canvasFooter = require('./canvas')
-const { config } = require('yargs')
 
 function mark(folderPath, title) {
   // const redBan = '\x1b[31m%s\x1b[0m'
