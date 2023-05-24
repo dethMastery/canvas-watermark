@@ -1,4 +1,4 @@
-const { createCanvas, Image, loadImage } = require('canvas')
+const { createCanvas, Image } = require('canvas')
 const fs = require('fs')
 
 async function canvasFooter(path, reso, model) {
@@ -33,7 +33,7 @@ async function canvasFooter(path, reso, model) {
 
   const pos1 = [50, canvas.height - 325]
   const pos2 = [50, canvas.height - 240]
-  const pos3 = [50, canvas.height - 115]
+  const pos3 = [50, canvas.height - 150]
 
   // Date w/ title
   ctx.font = '80px Sarabun'
@@ -58,7 +58,7 @@ async function canvasFooter(path, reso, model) {
   ctx.fillStyle = '#fe6e6f'
   const pos4 = [
     canvas.width - ctx.measureText(wtmText1).width - 50,
-    canvas.height - 325,
+    canvas.height - 190,
   ]
   ctx.fillText(wtmText1, pos4[0], pos4[1])
 
@@ -66,7 +66,7 @@ async function canvasFooter(path, reso, model) {
   ctx.fillStyle = 'whitesmoke'
   const pos5 = [
     canvas.width - ctx.measureText(wtmText2).width - 50,
-    canvas.height - 220,
+    canvas.height - 75,
   ]
   ctx.fillText(wtmText2, pos5[0], pos5[1])
 
