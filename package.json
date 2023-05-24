@@ -15,6 +15,7 @@
   "dependencies": {
     "canvas": "^2.11.2",
     "fs": "^0.0.1-security",
+    "sharp": "^0.32.1",
     "yargs": "^17.2.1"
   },
   "scripts": {
