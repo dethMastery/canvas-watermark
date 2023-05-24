@@ -28,11 +28,14 @@ function mark(folderPath, title) {
             imgResolution = [result.tags.ExifImageWidth, result.tags.ExifImageHeight]
           }
 
+          const imageLog = `ISO: ${result.tags.ISO} | F: ${result.tags.FocalLength}`
+
           const model = [
             result.tags.Model,
             result.tags.LensModel,
+            imageLog,
             new Date(result.tags.DateTimeOriginal * 1000).toLocaleDateString() +
-              ' ' +
+              ' | ' +
               title,
           ]
 
