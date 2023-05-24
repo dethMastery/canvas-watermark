@@ -4,7 +4,7 @@ const yargs = require('yargs')
 const wtm = require('./index')
 
 const opt = yargs
-  .usage("\x1b[32mUsage: 'cMark' or 'cMark -c <Your Custom Config>'\x1b[0m")
+  .usage("\x1b[32mUsage: 'cMark <Folder Path> -t <Your Title>'\x1b[0m")
   .option('config', {
     alias: 'c',
     describe: 'Add Watermark config',
