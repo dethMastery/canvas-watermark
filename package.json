@@ -1,5 +1,5 @@
 {
-  "name": "cmark",
+  "name": "cam-mark",
   "version": "1.0.0",
   "description": "watermark :x",
   "main": "./bin/index.js",
@@ -23,6 +23,6 @@
     "dev": "node ./bin/cli.js"
   },
   "bin": {
-    "cMark": "./bin/cli.js"
+    "camMark": "./bin/cli.js"
   }
 }
