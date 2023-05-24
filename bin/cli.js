@@ -17,7 +17,7 @@ const path = opt._[0]
 const title = opt.t
 
 if (path != undefined) {
-  wtm(path, config, title)
+  wtm(path, title)
 } else {
   console.log('\x1b[31m%s\x1b[0m', 'System Error: invalid folder path')
 }
