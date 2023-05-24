@@ -5,12 +5,6 @@ const wtm = require('./index')
 
 const opt = yargs
   .usage("\x1b[32mUsage: 'cMark <Folder Path> -t <Your Title>'\x1b[0m")
-  .option('config', {
-    alias: 'c',
-    describe: 'Add Watermark config',
-    type: 'string',
-    demandOption: false,
-  })
   .option('title', {
     alias: 't',
     describe: 'Gallery Title',
@@ -20,7 +14,6 @@ const opt = yargs
   .argv
 
 const path = opt._[0]
-const config = opt.c
 const title = opt.t
 
 if (path != undefined) {
