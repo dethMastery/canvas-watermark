@@ -1,5 +1,6 @@
 const { createCanvas, Image } = require('canvas')
 const fs = require('fs')
+const { greenSuccess, logReset } = require('./consoleColor')
 
 async function canvasFooter(path, reso, model) {
   const sptPath = path.split('/').slice(0, -1)
@@ -69,6 +70,8 @@ async function canvasFooter(path, reso, model) {
   } else {
     fs.writeFileSync(`${outPath}/${fileName}`, buffer)
   }
+  
+  console.log(`${greenSuccess}Added watermarked to ${fileName} successfully!${logReset}`);
 }
 
 module.exports = canvasFooter
