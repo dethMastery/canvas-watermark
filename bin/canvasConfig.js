@@ -1,4 +1,5 @@
 const canvasConfig = {
+  theme: 'frame',
   colors: {
     backgroundColor: '#2e2f2f',
     titleColor: 'whitesmoke',
