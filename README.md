@@ -116,6 +116,14 @@ It's okay if you want to change anything but making sure to read theme name in [
       <p align="center">
         <img src="./docs/src/detailed.jpeg" alt="detailed" width="80%" />
       </p>
+      <h4>
+        Reminder:
+      </h4>
+      <ul>
+        <li>
+          In Watermark Part, color that used in this part is only color in <pre>watermarkColors -> line1</pre>
+        </li>
+      </ul>
     </li>
     <br />
     <li>
