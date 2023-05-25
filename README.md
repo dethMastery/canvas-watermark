@@ -137,7 +137,7 @@ It's okay if you want to change anything but making sure to read theme name in [
     </li>
     <br />
     <li>
-      <code>frame-detailed</code>
+      <code>detailed-frame</code>
       <p align="center">
         <img src="./docs/src/frame-detailed.jpeg" alt="frame-detailed" width="80%" />
       </p>
