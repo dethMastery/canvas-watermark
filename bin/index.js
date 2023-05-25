@@ -6,9 +6,11 @@ const ExifParser = require('exif-parser')
 const lists = require('./ignored.json').ignored
 const canvasFrame = require('./canvas/Frame')
 const { redBan, logReset } = require('./consoleColor')
+
 const canvasConfig = require('./canvasConfig')
 const canvasMinimal = require('./canvas/Minimal')
 const canvasDetailed = require('./canvas/Detailed')
+const canvasDetailedFrame = require('./canvas/Detailed-Frame')
 
 function mark(folderPath, title) {
   const pattern = /\.(jpg|png|jpeg)$/i
@@ -45,7 +47,7 @@ function mark(folderPath, title) {
             imgResolution = [result.imageSize.width, result.imageSize.height]
           }
 
-          const imageLog = `ISO: ${result.tags.ISO} | F: ${result.tags.FNumber}`
+          const imageLog = `ISO${result.tags.ISO} | f${result.tags.FNumber}`
 
           const model = [
             result.tags.Model,
@@ -67,6 +69,10 @@ function mark(folderPath, title) {
 
             case 'detailed':
               canvasDetailed(path, imgResolution, model, config)
+              break
+
+            case 'detailed-frame':
+              canvasDetailedFrame(path, imgResolution, model, config)
               break
 
             default:
