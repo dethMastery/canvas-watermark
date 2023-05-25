@@ -1,19 +1,19 @@
-<h1>cam-mark</h1>
+# cam-mark
+This is an watermark generator for a bunch of image with a box of theme that you can fully customize!
 
-<div style="background: whitesmoke; color: #2e2f2f; padding: 1rem; border-radius: 1rem">
-  <h2>Frame Theme</h2>
-  <ol>
-    <li>
-      frame
-    </li>
-    <li>
-      minimal
-    </li>
-    <li>
-      detailed
-    </li>
-    <li>
-      frammed-detailed
-    </li>
-  </ol>
-</div>
+## Table of Content
+ - [About](./docs/about.md)
+
+---
+
+## Frame Theme name
+ 1. `frame`
+ 2. `minimal`
+ 3. `detailed`
+ 4. `frame-detailed`
+
+---
+
+<p align="center">
+  made with 🤍 by <a href="https://suphakit.net">Suphakit P.</a>
+</p>
