@@ -8,6 +8,7 @@ const canvasFrame = require('./canvas/Frame')
 const { redBan, logReset } = require('./consoleColor')
 const canvasConfig = require('./canvasConfig')
 const canvasMinimal = require('./canvas/Minimal')
+const canvasDetailed = require('./canvas/Detailed')
 
 function mark(folderPath, title) {
   const pattern = /\.(jpg|png|jpeg)$/i
@@ -62,6 +63,10 @@ function mark(folderPath, title) {
 
             case 'minimal':
               canvasMinimal(path, imgResolution, model, config)
+              break
+
+            case 'detailed':
+              canvasDetailed(path, imgResolution, model, config)
               break
 
             default:
