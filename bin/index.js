@@ -53,7 +53,7 @@ function mark(folderPath, title) {
               title,
           ]
 
-          canvasFooter(path, imgResolution, model)
+          canvasFooter(path, imgResolution, model, config)
         } catch (error) {
           console.log(
             `${redBan}Error reading or parsing the image file${logReset}:`,
