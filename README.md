@@ -72,7 +72,7 @@ For configuration part. I used JSON file that can easily help to config this fra
 
 It's okay if you want to change anything but making sure to read theme name in [next section](#frame-theme-name) and some of this reminder :)
 
- - in colors section must be in `HEX` or `html color format`
+ - in colors section must be in `HEX`, `html color format` or `rgba`
  - before changing fonts in fonts section PLEASE install font in your computer first and please making sure that font name is same to which is show in your font family
 
 ### Frame Theme name
