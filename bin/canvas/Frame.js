@@ -1,8 +1,8 @@
 const { createCanvas, Image } = require('canvas')
 const fs = require('fs')
-const { greenSuccess, logReset } = require('./consoleColor')
+const { greenSuccess, logReset } = require('../consoleColor')
 
-async function canvasFooter(path, reso, model) {
+async function canvasFrame(path, reso, model, config) {
   const sptPath = path.split('/').slice(0, -1)
   const dirPath = sptPath.join('/')
   const outPath = `${dirPath}/marked`
@@ -29,25 +29,25 @@ async function canvasFooter(path, reso, model) {
   const pos3 = [50, canvas.height - 150]
 
   // Date w/ title
-  ctx.font = '80px Sarabun'
-  ctx.fillStyle = 'whitesmoke'
+  ctx.font = `80px ${config.fonts.titleFont}`
+  ctx.fillStyle = config.colors.titleColor
   ctx.fillText(model[3], pos1[0], pos1[1])
 
   // Camera Model
-  ctx.font = '50px Sarabun'
-  ctx.fillStyle = 'whitesmoke'
+  ctx.font = `50px ${config.fonts.modelFont}`
+  ctx.fillStyle = config.colors.modelColor
   ctx.fillText(`${model[0]} | ${model[1]}`, pos2[0], pos2[1])
 
   // Camera Settings
-  ctx.font = '50px Sarabun'
-  ctx.fillStyle = 'whitesmoke'
+  ctx.font = `50px ${config.fonts.settingFont}`
+  ctx.fillStyle = config.colors.settingColor
   ctx.fillText(model[2], pos3[0], pos3[1])
 
   // Watermark
   const wtmText1 = 'dethz'
   const wtmText2 = '2018'
 
-  ctx.font = 'Bold 95px Sarabun'
+  ctx.font = `Bold 95px ${config.fonts.watermarkFonts.line1}`
   ctx.fillStyle = '#fe6e6f'
   const pos4 = [
     canvas.width - ctx.measureText(wtmText1).width - 50,
@@ -55,7 +55,7 @@ async function canvasFooter(path, reso, model) {
   ]
   ctx.fillText(wtmText1, pos4[0], pos4[1])
 
-  ctx.font = 'Bold 120px Sarabun'
+  ctx.font = `Bold 120px ${config.fonts.watermarkFonts.line2}`
   ctx.fillStyle = 'whitesmoke'
   const pos5 = [
     canvas.width - ctx.measureText(wtmText2).width - 50,
@@ -74,4 +74,4 @@ async function canvasFooter(path, reso, model) {
   console.log(`${greenSuccess}Added watermarked to ${fileName} successfully!${logReset}`);
 }
 
-module.exports = canvasFooter
+module.exports = canvasFrame
