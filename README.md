@@ -123,6 +123,9 @@ It's okay if you want to change anything but making sure to read theme name in [
         <li>
           In Watermark Part, color that used in this part is only color in <pre>watermarkColors -> line1</pre>
         </li>
+        <li>
+          Don't forgot to check your color before publish all of your pictures :)
+        </li>
       </ul>
     </li>
     <br />
