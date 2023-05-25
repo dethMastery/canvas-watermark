@@ -7,6 +7,7 @@ const lists = require('./ignored.json').ignored
 const canvasFrame = require('./canvas/Frame')
 const { redBan, logReset } = require('./consoleColor')
 const canvasConfig = require('./canvasConfig')
+const canvasMinimal = require('./canvas/Minimal')
 
 function mark(folderPath, title) {
   const pattern = /\.(jpg|png|jpeg)$/i
@@ -19,7 +20,7 @@ function mark(folderPath, title) {
     try {
       fs.writeFileSync(configPath, JSON.stringify(canvasConfig, null, 2))
     } catch (err) {
-      console.error(`${redBan}Error${logReset}:`, err);
+      console.error(`${redBan}Error${logReset}:`, err)
     }
 
     config = JSON.parse(fs.readFileSync(configPath).toString())
@@ -54,7 +55,19 @@ function mark(folderPath, title) {
               title,
           ]
 
-          canvasFrame(path, imgResolution, model, config)
+          switch (config.theme) {
+            case 'frame':
+              canvasFrame(path, imgResolution, model, config)
+              break
+
+            case 'minimal':
+              canvasMinimal(path, imgResolution, model, config)
+              break
+
+            default:
+              canvasFrame(path, imgResolution, model, config)
+              break
+          }
         } catch (error) {
           console.log(
             `${redBan}Error reading or parsing the image file${logReset}:`,
