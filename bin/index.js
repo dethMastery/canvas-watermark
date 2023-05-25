@@ -4,7 +4,7 @@ const path = require('path')
 const ExifParser = require('exif-parser')
 
 const lists = require('./ignored.json').ignored
-const canvasFooter = require('./canvas')
+const canvasFrame = require('./canvas/Frame')
 const { redBan, logReset } = require('./consoleColor')
 const canvasConfig = require('./canvasConfig')
 
@@ -14,14 +14,15 @@ function mark(folderPath, title) {
   let config
 
   if (fs.existsSync(configPath)) {
-    config = fs.readFileSync(configPath).toString()
+    config = JSON.parse(fs.readFileSync(configPath).toString())
   } else {
     try {
       fs.writeFileSync(configPath, JSON.stringify(canvasConfig, null, 2))
     } catch (err) {
       console.error(`${redBan}Error${logReset}:`, err);
     }
-    config = fs.readFileSync(configPath).toString()
+
+    config = JSON.parse(fs.readFileSync(configPath).toString())
   }
 
   fs.readdirSync(folderPath).forEach((file) => {
@@ -42,7 +43,7 @@ function mark(folderPath, title) {
             imgResolution = [result.imageSize.width, result.imageSize.height]
           }
 
-          const imageLog = `ISO: ${result.tags.ISO} | F: ${result.tags.FocalLength}`
+          const imageLog = `ISO: ${result.tags.ISO} | F: ${result.tags.FNumber}`
 
           const model = [
             result.tags.Model,
@@ -53,7 +54,7 @@ function mark(folderPath, title) {
               title,
           ]
 
-          canvasFooter(path, imgResolution, model, config)
+          canvasFrame(path, imgResolution, model, config)
         } catch (error) {
           console.log(
             `${redBan}Error reading or parsing the image file${logReset}:`,
