@@ -44,19 +44,19 @@ async function canvasFrame(path, reso, model, config) {
   ctx.fillText(model[2], pos3[0], pos3[1])
 
   // Watermark
-  const wtmText1 = 'dethz'
-  const wtmText2 = '2018'
+  const wtmText1 = config.watermark.line1
+  const wtmText2 = config.watermark.line2
 
-  ctx.font = `Bold 95px ${config.fonts.watermarkFonts.line1}`
-  ctx.fillStyle = '#fe6e6f'
+  ctx.font = `Bold 95px ${config.fonts.waterMarkFonts.line1}`
+  ctx.fillStyle = config.colors.watermarkColors.line1
   const pos4 = [
     canvas.width - ctx.measureText(wtmText1).width - 50,
     canvas.height - 190,
   ]
   ctx.fillText(wtmText1, pos4[0], pos4[1])
 
-  ctx.font = `Bold 120px ${config.fonts.watermarkFonts.line2}`
-  ctx.fillStyle = 'whitesmoke'
+  ctx.font = `Bold 120px ${config.fonts.waterMarkFonts.line2}`
+  ctx.fillStyle = config.colors.watermarkColors.line2
   const pos5 = [
     canvas.width - ctx.measureText(wtmText2).width - 50,
     canvas.height - 75,
