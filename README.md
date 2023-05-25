@@ -82,19 +82,42 @@ It's okay if you want to change anything but making sure to read theme name in [
       <p align="center">
         <img src="./docs/src/frame.jpeg" alt="frame" width="80%" />
       </p>
+      <h4>
+        Reminder:
+      </h4>
+      <ul>
+        <li>
+          This style is really up to your color style <code>But</code> not really flexible for someone 
+        </li>
+        <li>
+          This style <code>Really</code> use all of config in config file and yes please fill it every form! (- w -)
+        </li>
+      </ul>
     </li>
+    </li>
+    <br />
     <li>
       <code>minimal</code>
       <p align="center">
         <img src="./docs/src/minimal.jpeg" alt="minimal" width="80%" />
       </p>
+      <h4>
+        Reminder:
+      </h4>
+      <ul>
+        <li>
+          Background of This style <code>Should</code> be in 'rgba' and set 'alpha' below 0.6 (In example picture, Alpha value is 0.4 [ rgba(0, 0, 0, 0.4) ])
+        </li>
+      </ul>
     </li>
+    <br />
     <li>
       <code>detailed</code>
       <p align="center">
         <img src="./docs/src/detailed.jpeg" alt="detailed" width="80%" />
       </p>
     </li>
+    <br />
     <li>
       <code>frame-detailed</code>
       <p align="center">
