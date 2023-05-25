@@ -139,8 +139,22 @@ It's okay if you want to change anything but making sure to read theme name in [
     <li>
       <code>detailed-frame</code>
       <p align="center">
-        <img src="./docs/src/frame-detailed.jpeg" alt="frame-detailed" width="80%" />
+        <img src="./docs/src/detailed-frame.jpeg" alt="detailed-frame" width="80%" />
       </p>
+      <h4>
+        Reminder:
+      </h4>
+      <ul>
+        <li>
+          background config doesn't work here :x
+        </li>
+        <li>
+          In Watermark Part, color that used in this part is only color in <pre>watermarkColors -> line1</pre>
+        </li>
+        <li>
+          Background of This style <code>Should</code> be in 'rgba' and set 'alpha' below 0.6 (In example picture, Alpha value is 0.4 [ rgba(0, 0, 0, 0.4) ])
+        </li>
+      </ul>
     </li>
   </ol>
 
